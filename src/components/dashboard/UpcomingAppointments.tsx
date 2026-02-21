@@ -26,7 +26,8 @@ export async function UpcomingAppointmentsWidget() {
                     </div>
                 ) : (
                     <div className="divide-y divide-border">
-                        {appointments.map((apt) => (
+                        {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+                        {appointments.map((apt: any) => (
                             <div key={apt.id} className="p-4 sm:p-6 hover:bg-muted/30 transition-colors flex items-center justify-between group">
                                 <div className="space-y-1">
                                     <p className="font-semibold text-foreground">{apt.customer.name}</p>

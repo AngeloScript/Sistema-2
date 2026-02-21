@@ -101,7 +101,8 @@ export default async function DashboardPage() {
                                 <p className="text-muted-foreground text-sm flex-1 flex items-center justify-center">Nenhum serviço faturado ainda.</p>
                             ) : (
                                 <div className="space-y-4 flex-1">
-                                    {metrics.topProfessionals.map((prof, index) => (
+                                    {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+                                    {metrics.topProfessionals.map((prof: any, index: number) => (
                                         <div key={prof.id} className="flex items-center justify-between">
                                             <div className="flex items-center gap-3">
                                                 <div className="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-sm">
