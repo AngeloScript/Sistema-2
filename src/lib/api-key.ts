@@ -1,8 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server'
 
-const API_KEY = process.env.PUBLIC_API_KEY
-
 export function validateApiKey(req: NextRequest): NextResponse | null {
+    const API_KEY = process.env.PUBLIC_API_KEY
+
+    // Log para debugar no Vercel (se necessário pode ser removido depois)
+    console.log('Validating API Key. Server has key?', !!API_KEY)
+
     if (!API_KEY) {
         return NextResponse.json(
             { error: 'API key not configured on server' },
