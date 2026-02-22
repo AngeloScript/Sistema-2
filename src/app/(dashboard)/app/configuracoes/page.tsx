@@ -23,6 +23,12 @@ export default async function ConfiguracoesPage() {
         price: Number(s.price),
     }))
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const safeTeam = team.map((u: any) => ({
+        ...u,
+        commissionRate: u.commissionRate ? Number(u.commissionRate) : null,
+    }))
+
     return (
         <div className="flex h-full flex-col space-y-6 animate-in">
             <div>
@@ -38,7 +44,7 @@ export default async function ConfiguracoesPage() {
                 settings={settings}
                 services={services}
                 categories={categories}
-                team={team}
+                team={safeTeam}
             />
         </div>
     )

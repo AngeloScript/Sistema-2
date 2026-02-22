@@ -17,7 +17,7 @@ export default function RegisterPage() {
     const [state, formAction, isPending] = useActionState(
         async (prevState: typeof initialState, formData: FormData) => {
             const result = await registerAction(formData)
-            if (result.error) return { error: result.error, success: false }
+            if (result?.error) return { error: result.error, success: false }
             return { error: null, success: true }
         },
         initialState
